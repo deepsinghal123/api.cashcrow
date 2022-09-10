@@ -14,7 +14,7 @@ app.use(express.urlencoded({
 app.use('/images',express.static('uploads'));
 
 app.get('/',(req,res)=>{
-  res.json({data:'apiData1'});
+  res.json({data:'apiData data'});
 })
 
 app.get('/names',(req,res)=>{
