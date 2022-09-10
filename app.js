@@ -13,6 +13,10 @@ app.use(express.urlencoded({
 
 app.use('/images',express.static('uploads'));
 
+app.get('/',(req,res)=>{
+  res.json({data:'apiData'});
+})
+
 app.get('/names',(req,res)=>{
   const data=fs.readFileSync('./thing.json');
     res.json( JSON.parse(data));
