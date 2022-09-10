@@ -26,6 +26,6 @@ app.get("/api_coupon", async(req, res) => {
   await fetch('https://inrdeals.com/api/v1/coupon-feed?token=65382fdc6fc8ecff5b74f0d88c6e09741ef44d62&id=dee542885700',{mode:'cors'}).then(data=>data.json()).then(data=>res.json(data)) 
 });
 
-app.listen(5000,()=>{
-    console.log(`server run at port 5000`);
+app.listen(3000,()=>{
+    console.log(`server run at port 3000`);
 })
