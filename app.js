@@ -18,6 +18,17 @@ app.get("/api_campaign", async(req, res) => {
   await fetch('https://inrdeals.com/fetch/stores?id=dee542885700&token=1e17a6fe633f7fd3b461e9c27fdbf66deaf30b2b',{mode:'cors'}).then(data=>data.json()).then(data=>res.json(data)) 
 });
 
+app.get("/api_campaigns/:store_id", async(req, res) => {
+  await fetch('https://inrdeals.com/fetch/stores?id=dee542885700&token=1e17a6fe633f7fd3b461e9c27fdbf66deaf30b2b',{mode:'cors'}).then(data=>data.json()).then(data=>
+  {
+    data = data.stores.filter(function(item){
+      return(item.id == req.params.store_id)
+    })
+    res.json(data)
+  }
+  ) 
+});
+
 app.get("/api_coupon", async(req, res) => {
   await fetch('https://inrdeals.com/api/v1/coupon-feed?token=65382fdc6fc8ecff5b74f0d88c6e09741ef44d62&id=dee542885700',{mode:'cors'}).then(data=>data.json()).then(data=>res.json(data)) 
 });
