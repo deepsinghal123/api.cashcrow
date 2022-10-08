@@ -33,6 +33,10 @@ app.get("/api_coupon", async(req, res) => {
   await fetch('https://inrdeals.com/api/v1/coupon-feed?token=65382fdc6fc8ecff5b74f0d88c6e09741ef44d62&id=dee542885700',{mode:'cors'}).then(data=>data.json()).then(data=>res.json(data)) 
 });
 
+app.post("/get_api_data", async(req, res) => {
+  await fetch(req.body.url,{mode:'cors'}).then(data=>data.json()).then(data=>res.json(data)) 
+});
+
 app.get("/transaction_report", async(req, res) => {
   let currentDate1 = new Date()
   let oldDate1 = new Date()
