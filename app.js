@@ -40,7 +40,7 @@ app.post("/get_api_data", async(req, res) => {
 app.get("/transaction_report", async(req, res) => {
   let currentDate1 = new Date()
   let oldDate1 = new Date()
-  oldDate1.setMonth(oldDate1.getMonth()-3);
+  oldDate1.setMonth(oldDate1.getMonth()-1);
   let currentDate = currentDate1.toISOString().split('T')[0]
   let oldDate = oldDate1.toISOString().split('T')[0]
   await fetch(`https://inrdeals.com/fetch/reports?token=198f2053cbdcb7c0f83aae0409c2a0b4cf8ea0ff&id=dee542885700&startdate=${oldDate}&enddate=${currentDate}`,{mode:'cors'}).then(data=>data.json()).then(data=>res.json(data)) 
