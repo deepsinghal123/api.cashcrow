@@ -43,7 +43,7 @@ app.get("/transaction_report", async(req, res) => {
   oldDate1.setMonth(oldDate1.getMonth()-3);
   let currentDate = currentDate1.toISOString().split('T')[0]
   let oldDate = oldDate1.toISOString().split('T')[0]
-  await fetch(`https://inrdeals.com/fetch/reports?token=198f2053cbdcb7c0f83aae0409c2a0b4cf8ea0ff&id=dee542885700&startdate=${oldDate}&enddate=${currentDate}&txn_id=884780`,{mode:'cors'}).then(data=>data.json()).then(data=>res.json(data)) 
+  await fetch(`https://inrdeals.com/fetch/reports?token=198f2053cbdcb7c0f83aae0409c2a0b4cf8ea0ff&id=dee542885700&startdate=${oldDate}&enddate=${currentDate}`,{mode:'cors'}).then(data=>data.json()).then(data=>res.json(data)) 
 });
 //Notfound
 app.use((req,res,next)=>{
